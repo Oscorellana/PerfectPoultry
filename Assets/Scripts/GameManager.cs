@@ -6,15 +6,20 @@ public class GameManager : MonoBehaviour
 
     private int currentStep = 0;
     private int score = 0;
+    public string CurrentStepName => steps[currentStep];
+
 
     // ✨ Define cooking steps in order
     // These are the required actions in sequence.
     private string[] steps = new string[]
     {
-        "Salt",   // Step 0
-        "Pepper", // Step 1
-        "Water",  // Step 2
-        "Turkey"  // Step 3 (inspect or prep turkey)
+        "GutTurkey",   // Step 0
+        "StuffTurkey",   // Step 1
+        "Salt", // Step 2
+        "Pepper",  // Step 3
+        "Water"  // Step 4
+        
+
 
 
 

@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 440018192}
   m_Layer: 6
   m_Name: Turkey
-  m_TagString: Untagged
+  m_TagString: Turkey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 1261758888}
   m_Layer: 6
   m_Name: PepperShaker
-  m_TagString: Untagged
+  m_TagString: PepperShaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 1746612869}
   m_Layer: 6
   m_Name: WaterCup
-  m_TagString: Untagged
+  m_TagString: WaterCup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

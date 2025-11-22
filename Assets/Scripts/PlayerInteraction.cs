@@ -64,6 +64,26 @@ public class PlayerInteraction : MonoBehaviour
     {
         switch (heldObject.tag)
         {
+            case "Turkey":
+                if (GameManager.Instance.CurrentStepName == "GutTurkey")
+                {
+                    Debug.Log("You gut the turkey.");
+                    GameManager.Instance.TryStep("GutTurkey");
+                }
+                else if (GameManager.Instance.CurrentStepName == "StuffTurkey")
+                {
+                    Debug.Log("You stuff the turkey.");
+                    GameManager.Instance.TryStep("StuffTurkey");
+                }
+                else
+                {
+                    Debug.Log("Nothing else to do with the turkey right now.");
+                }
+                break;
+
+
+
+
             case "SaltShaker":
                 Debug.Log("You shake salt!");
                 GameManager.Instance.TryStep("Salt");
@@ -79,10 +99,7 @@ public class PlayerInteraction : MonoBehaviour
                 GameManager.Instance.TryStep("Water");
                 break;
 
-            case "Turkey":
-                Debug.Log("You inspect the turkey.");
-                GameManager.Instance.TryStep("Turkey");
-                break;
+           
 
             default:
                 Debug.Log("This item cannot be used.");
