@@ -458,8 +458,8 @@ GameObject:
   - component: {fileID: 719717204}
   - component: {fileID: 719717203}
   m_Layer: 6
-  m_Name: Salt Shaker
-  m_TagString: Untagged
+  m_Name: SaltShaker
+  m_TagString: SaltShaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 1261758889}
   - component: {fileID: 1261758888}
   m_Layer: 6
-  m_Name: Pepper Shaker
+  m_Name: PepperShaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 1746612870}
   - component: {fileID: 1746612869}
   m_Layer: 6
-  m_Name: water
+  m_Name: WaterCup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

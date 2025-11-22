@@ -28,40 +28,66 @@ public class PlayerInteraction : MonoBehaviour
     void TryPickup()
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickupLayer))
         {
             heldObject = hit.collider.gameObject;
             heldRb = heldObject.GetComponent<Rigidbody>();
-            heldRb.useGravity = true;
+
+            // Safety in case someone forgets to add a Rigidbody later
+            if (heldRb == null)
+            {
+                heldRb = heldObject.AddComponent<Rigidbody>();
+            }
+
+            heldRb.useGravity = false;
             heldRb.isKinematic = true;
+
             heldObject.transform.position = holdPoint.position;
+            heldObject.transform.rotation = holdPoint.rotation;
             heldObject.transform.parent = holdPoint;
         }
     }
 
     void DropObject()
     {
-        heldRb.useGravity = false;
+        heldRb.useGravity = true;
         heldRb.isKinematic = false;
+
         heldObject.transform.parent = null;
+
         heldObject = null;
         heldRb = null;
     }
 
     void InteractWithHeldItem()
     {
-        // Example interactions
-        if (heldObject.CompareTag("SaltShaker"))
+        switch (heldObject.tag)
         {
-            Debug.Log("You shake some salt!");
-        }
-        else if (heldObject.CompareTag("WaterCup"))
-        {
-            Debug.Log("You pour some water!");
-        }
-        else
-        {
-            Debug.Log("This item can't be used.");
+            case "SaltShaker":
+                Debug.Log("You shake salt!");
+                GameManager.Instance.TryStep("Salt");
+                break;
+
+            case "PepperShaker":
+                Debug.Log("You sprinkle pepper!");
+                GameManager.Instance.TryStep("Pepper");
+                break;
+
+            case "WaterCup":
+                Debug.Log("You pour water!");
+                GameManager.Instance.TryStep("Water");
+                break;
+
+            case "Turkey":
+                Debug.Log("You inspect the turkey.");
+                GameManager.Instance.TryStep("Turkey");
+                break;
+
+            default:
+                Debug.Log("This item cannot be used.");
+                break;
         }
     }
+
 }
