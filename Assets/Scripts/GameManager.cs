@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public string CurrentStepName => steps[currentStep];
 
+    public bool AllStepsCompleted => currentStep >= steps.Length;
+    public int CurrentStepIndex => currentStep;
+    public string[] AllSteps => steps;
+
+
 
     // ✨ Define cooking steps in order
     // These are the required actions in sequence.
